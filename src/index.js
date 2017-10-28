@@ -2,28 +2,11 @@ import PIXI from 'expose-loader?PIXI!phaser-ce/build/custom/pixi.js';
 import p2 from 'expose-loader?p2!phaser-ce/build/custom/p2.js';
 import Phaser from 'expose-loader?Phaser!phaser-ce/build/custom/phaser-split.js';
 
-let game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create })
+import MenuState from './states/menu'
+import SinglePlayState from './states/singleplay'
 
-let titleText = 'WereWolf'
+let game = new Phaser.Game(800, 600, Phaser.AUTO, 'halp')
+game.state.add('Menu', MenuState, false)
+game.state.add('SinglePlay', SinglePlayState, false)
 
-function preload () {
-  //
-}
-
-var titleTextStyle = {
-  fill: '#fff'
-}
-
-function create() {
-  let text = game.add.text(game.world.centerX, game.world.centerY, titleText, titleTextStyle)
-  text.anchor.x = 0.5;
-  text.anchor.y = 0.5;
-}
-
-function update() {
-  //
-}
-
-function render() {
-  //
-}
+game.state.start('Menu')
