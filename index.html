@@ -1,0 +1,47 @@
+
+<!doctype html>
+<html>
+  <head>
+  <meta charset="UTF-8" />
+  <title>Werewolf</title>
+  <script src="/vendor/phaser.min.js"></script>
+</head>
+<body>
+
+  <script type="text/javascript">
+  window.onload = function() {
+
+    var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create })
+
+    var titleText = 'Werewolf'
+
+    function preload () {
+      //
+    }
+
+    var titleTextStyle = {
+      fill: '#fff',
+      world: {
+        fill: '#333'
+      }
+    }
+
+  titleTextStyle.fill = '#333'
+
+    function create() {
+      var text = game.add.text(game.world.centerX, game.world.centerY, 'Werewolf', titleTextStyle)
+      text.anchor.x = 0.5;
+      text.anchor.y = 0.5;
+    }
+
+    function update() {
+      //
+    }
+
+    function render() {
+      //
+    }
+  }
+  </script>
+</body>
+</html>
